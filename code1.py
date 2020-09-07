@@ -2,8 +2,10 @@ import numpy as np
 
 
 def test(a):
-    return 0 if a else 1
+    assert isinstance(a, np.ndarray)
+    m = a.max()
+    return 0 if m > 10 else 1
 
 
 print('Hello World')
-print(f'{test(True) = }')
+print(f'{test(np.array([1, 2, 3])) = }')
